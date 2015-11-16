@@ -1,0 +1,19 @@
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /bacardi3/
+RewriteRule ^index\.php$ - [L]
+RewriteRule ^static/lib/(.*) /bacardi3/wp-includes/$1 [QSA,L]
+RewriteRule ^file/(.*) /bacardi3/wp-content/uploads/$1 [QSA,L]
+RewriteRule ^static/ext/(.*) /bacardi3/wp-content/plugins/$1 [QSA,L]
+RewriteRule ^static/(.*) /bacardi3/wp-content/themes/bridge/$1 [QSA,L]
+RewriteRule ^ajax /bacardi3/wp-admin/admin-ajax.php [QSA,L]
+RewriteRule ^wp-content/themes/bridge/screenshot\.png|readme\.html|license\.txt|wp-content/debug\.log|wp-includes/$ /bacardi3/nothing_404_404 [QSA,L]
+RewriteRule ^(((wp-content|wp-includes)/([A-Za-z0-9-_/]*))|(wp-admin/(?!network/)([A-Za-z0-9-_/]+)))(\.txt|/)$ /bacardi3/nothing_404_404 [QSA,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /bacardi3/index.php [L]
+</IfModule>
+
+# END WordPress

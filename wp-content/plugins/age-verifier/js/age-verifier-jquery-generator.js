@@ -1,0 +1,1 @@
+!function(a,b,c,d){a.age_verifier_get_jquery=function(){var b="",c=a.age_verifier_get_content().replace(/\'/g,"\\'"),d=a.age_verifier_get_current_settings(),e=JSON.stringify(d).replace(/\'/g,"\\'");return b+="$.AgeVerifier({",b+="   settings : '"+e+"',",b+="   content : '"+c+"'",b+="});"},a(c).ready(function(){})}(jQuery,window,document);
